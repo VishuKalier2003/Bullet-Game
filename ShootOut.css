@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+#screen {
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: white;
+}
+
+#player {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    outline: 2px solid black;
+    z-index: 10;
+    background-color: black;
+    cursor: pointer;
+}
+
+.fired {
+    position: absolute;
+    z-index: 10;
+    /*Top-left, Top-right, Bottom-left, Bottom-right*/
+    border-radius: 2% 50% 50% 2%;
+    animation: fire 3s linear 1;
+    background-color: rgb(0, 0, 0);
+    transition-delay: 0.5s;
+}
+
+@keyframes fire {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(1100px);
+    }
+}
+
+#regulations {
+    position: absolute;
+    top: -30vh;
+    left: 30vw;
+    width: 50vw;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    outline: 2px solid blue;
+    padding: 6px;
+}
+
+li {
+    list-style: none;
+}
+
+#wing1 {
+    position: absolute;
+    z-index: 10;
+    background-color: black;
+}
+
+#wing2 {
+    position: absolute;
+    z-index: 10;
+    background-color: black;
+}
+
+.drones {
+    position: absolute;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.bulletfire {
+    position: relative;
+    z-index: 10;
+    /*Border radius:- top-left, top-right, bottom-right, bottom-left*/
+    border-radius: 50% 10% 10% 50%;
+}
+
+.enemy-fire {
+    animation: enemy-fire 3s linear infinite;
+}
+
+@keyframes enemy-fire {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-1000px);
+    }
+}
+
+.move {
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-300px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(300px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
